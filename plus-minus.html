@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="minF()">-</button>
+<button onclick="plusF()">+</button>
+
+<p id="demo"></p>
+
+<script>
+
+let fruits = 0;
+document.getElementById("demo").innerHTML = fruits;
+
+function plusF() {
+  fruits++;
+  document.getElementById("demo").innerHTML = fruits;
+}
+function minF(){
+fruits--;
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+
+</body>
+</html>
