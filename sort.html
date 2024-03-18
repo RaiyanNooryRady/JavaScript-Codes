@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Stable Sort</h1>
+
+<p>From ES2019, browsers must use a stable sorting algorithm.</p>
+<p>When sorting elements on a key, the elements must keep their relative position to other objects with the same key.</p>
+
+<p id="demo"></p>
+
+<script>
+
+const myArr = [
+   {name:"X12",price:130 },
+  {name:"X13",price:130 },
+  {name:"X14",price:130 },
+  {name:"X15",price:130 },
+  {name:"X16",price:140 },
+  {name:"X03",price:100 },
+  {name:"X04",price:110 },
+  {name:"X05",price:110 },
+  {name:"X06",price:110 },
+  {name:"X07",price:110 },
+  {name:"X08",price:120 },
+  {name:"X00",price:100 },
+  {name:"X01",price:100 },
+  {name:"X02",price:100 },
+  {name:"X09",price:120 },
+  {name:"X10",price:120 },
+  {name:"X11",price:120 },
+  {name:"X17",price:140 },
+  {name:"X18",price:140 },
+  {name:"X19",price:140 }
+];
+myArr.sort(function(a,b){
+    if(a.price<b.price) return -1;
+    else if( a.price>b.price) return 1;
+    else return 0;
+});
+/*myArr.sort(function(a,b){
+    return a.price-b.price;
+});*/
+let txt="";
+myArr.forEach(myF);
+function myF(val){
+txt+=val.name+' '+val.price+'<br>';
+}
+document.getElementById('demo').innerHTML=txt;
+</script>
+
+</body>
+</html>
