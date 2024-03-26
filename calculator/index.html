@@ -31,7 +31,7 @@
                 <button id="btn-minus" class="btn">-</button>
                 <button id="btn-reset" class="btn">C</button>
                 <button id="btn-0" class="btn">0</button>
-                <button id="btn=" class="btn">=</button>
+                <button id="btn=" class="btn"> = </button>
                 <button id="btn-plus" class="btn">+</button>
 
             </div>
@@ -45,43 +45,48 @@
         let clickedBtn = 0;
         let operator = {
             plus: true,
-            minus:false,
-            mul:false,
+            minus: false,
+            mul: false,
             div: false
         };
 
         function addValue() {
             for (let i = 0; i < 10; i++) {
                 let btnId = document.getElementById('btn-' + i);
-                btnId.addEventListener('click', function () {
-                    document.getElementById('screen-text').innerText =i;
-                });
+                btnId.addEventListener('click', () => { clickedBtn=i; document.getElementById('screen-text').innerText = i});
             }
-            let plusBtn= document.getElementById('btn-plus');
-            plusBtn.addEventListener('click',function(){
-                operator.plus=true;
-            });
-            let minusBtn= document.getElementById('btn-minus');
-            minusBtn.addEventListener('click',function(){
-                operator.minus=true;
-            });
-            let multiplicationBtn= document.getElementById('btn-multiplication');
-            multiplicationBtn.addEventListener('click',function(){
-                operator.mul=true;
-            });
-            let divisionBtn= document.getElementById('btn-division');
-            divisionBtn.addEventListener('click',function(){
-                operator.div=true;
-            });
+            let plusBtn = document.getElementById('btn-plus');
+            plusBtn.addEventListener('click', () => operator.plus = true );
+
+            let minusBtn = document.getElementById('btn-minus');
+            minusBtn.addEventListener('click', () => operator.minus = true);
+
+            let multiplicationBtn = document.getElementById('btn-multiplication');
+            multiplicationBtn.addEventListener('click', () => operator.mul = true );
+
+            let divisionBtn = document.getElementById('btn-division');
+            divisionBtn.addEventListener('click', () => operator.div = true );
+
+            let equalBtn = document.getElementById('btn=');
+            equalBtn.addEventListener('click', function () {
+
+                if(operator.plus==true) result+=clickedBtn;
+                else if(operator.minus==true) result-=clickedBtn;
+                else if(operator.mul==true) result*=clickedBtn;
+                else result/=clickedBtn;
+                document.getElementById('screen-text').innerHTML=result;
+            })
         }
         addValue();
-       
-        function reset(){
-            result=0;
-            document.getElementById('screen-text').innerText= result;
+
+        function reset() {
+            result = 0;
+            operator.plus = true;
+            operator.minus = operator.mul = operator.div = false;
+            document.getElementById('screen-text').innerText = result;
         }
-        let resetBtn=document.getElementById('btn-reset');
-        resetBtn.addEventListener('click',reset);
+        let resetBtn = document.getElementById('btn-reset');
+        resetBtn.addEventListener('click', reset);
     </script>
 </body>
 
