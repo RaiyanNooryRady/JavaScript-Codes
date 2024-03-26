@@ -41,41 +41,44 @@
         <small>Copyright &copy; Raiyan Noory Rady || All rights reserved</small>
     </footer>
     <script>
-        let screenText = '';
+        let result = 0;
+        let clickedBtn = 0;
+        let operator = {
+            plus: true,
+            minus:false,
+            mul:false,
+            div: false
+        };
+
         function addValue() {
             for (let i = 0; i < 10; i++) {
                 let btnId = document.getElementById('btn-' + i);
                 btnId.addEventListener('click', function () {
-                    screenText+=i;
-                    document.getElementById('screen-text').innerText =screenText;
+                    document.getElementById('screen-text').innerText =i;
                 });
             }
             let plusBtn= document.getElementById('btn-plus');
             plusBtn.addEventListener('click',function(){
-                screenText+='+';
-                document.getElementById('screen-text').innerText = screenText;
+                operator.plus=true;
             });
             let minusBtn= document.getElementById('btn-minus');
             minusBtn.addEventListener('click',function(){
-                screenText+='-';
-                document.getElementById('screen-text').innerText = screenText;
+                operator.minus=true;
             });
             let multiplicationBtn= document.getElementById('btn-multiplication');
             multiplicationBtn.addEventListener('click',function(){
-                screenText+='*';
-                document.getElementById('screen-text').innerText = screenText;
+                operator.mul=true;
             });
             let divisionBtn= document.getElementById('btn-division');
             divisionBtn.addEventListener('click',function(){
-                screenText+='/';
-                document.getElementById('screen-text').innerText = screenText;
+                operator.div=true;
             });
         }
         addValue();
        
         function reset(){
-            screenText='';
-            document.getElementById('screen-text').innerText= screenText;
+            result=0;
+            document.getElementById('screen-text').innerText= result;
         }
         let resetBtn=document.getElementById('btn-reset');
         resetBtn.addEventListener('click',reset);
