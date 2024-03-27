@@ -55,12 +55,15 @@
             operator.mul = false;
             operator.div = false;
         }
+        
+        let checkAllFalse= (operator.plus==false && operator.minus==false && operator.mul==false && operator.div==false);
+        
         function addValue() {
             for (let i = 0; i < 10; i++) {
                 let btnId = document.getElementById('btn-' + i);
                 btnId.addEventListener('click', () => {
                      clickedBtn += i;
-                     document.getElementById('screen-text').innerText = clickedBtn 
+                     document.getElementById('screen-text').innerText = clickedBtn; 
                     });
             }
             let plusBtn = document.getElementById('btn-plus');
@@ -98,10 +101,10 @@
             let equalBtn = document.getElementById('btn=');
             equalBtn.addEventListener('click', function () {
 
-                if (operator.plus == true) result += Number(clickedBtn), allFalse(), operator.plus = true;
-                else if (operator.minus == true) result -= Number(clickedBtn), allFalse(), operator.minus = true;
-                else if (operator.mul == true) result *= Number(clickedBtn), allFalse(), operator.mul = true;
-                else if (operator.div == true) result /= Number(clickedBtn), allFalse(), operator.div = true;
+                if (operator.plus == true) result += Number(clickedBtn), allFalse();
+                else if (operator.minus == true) result -= Number(clickedBtn), allFalse();
+                else if (operator.mul == true) result *= Number(clickedBtn), allFalse();
+                else if (operator.div == true) result /= Number(clickedBtn), allFalse();
 
                 document.getElementById('screen-text').innerHTML = result;
 
@@ -110,10 +113,7 @@
             })
         }
         addValue();
-        console.log(operator.plus);
-        console.log(operator.minus);
-        console.log(operator.mul);
-        console.log(operator.div);
+        
         function reset() {
             result = 0;
             clickedBtn = '';
