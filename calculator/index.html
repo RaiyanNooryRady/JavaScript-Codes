@@ -56,7 +56,7 @@
             operator.minus = false;
             operator.mul = false;
             operator.div = false;
-            operator.equal=false;
+            operator.equal = false;
         }
 
         let checkAllFalse = (operator.plus == false && operator.minus == false && operator.mul == false && operator.div == false);
@@ -70,10 +70,10 @@
                 result *= Number(clickedBtn);
             else if (operator.div)
                 result /= Number(clickedBtn);
-            else if(checkAllFalse)
-                result+=Number(clickedBtn);
+            else if (checkAllFalse)
+                result += Number(clickedBtn);
         }
-        
+
 
         function addValue() {
             for (let i = 0; i < 10; i++) {
@@ -87,6 +87,7 @@
             plusBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
+                if (operator.equal && clickedBtn!='') result=0;
                 clickedBtn = '';
                 allFalse();
                 operator.plus = true;
@@ -96,6 +97,7 @@
             minusBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
+                if (operator.equal && clickedBtn!='') result=0;
                 clickedBtn = '';
                 allFalse();
                 operator.minus = true;
@@ -105,6 +107,7 @@
             multiplicationBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
+                if (operator.equal && clickedBtn!='') result=0;
                 clickedBtn = '';
                 allFalse();
                 operator.mul = true;
@@ -114,6 +117,7 @@
             divisionBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
+                if (operator.equal && clickedBtn!='') result=0;
                 clickedBtn = '';
                 allFalse();
                 operator.div = true;
@@ -127,12 +131,12 @@
                 else if (operator.mul) result *= Number(clickedBtn), allFalse();
                 else if (operator.div) result /= Number(clickedBtn), allFalse();
 
-                operator.equal=true;
-                
+                operator.equal = true;
+
                 document.getElementById('screen-text').innerHTML = result;
 
-                clickedBtn = '';
-                result = 0;
+                //clickedBtn = '';
+                //result = 0;
             })
         }
         addValue();
