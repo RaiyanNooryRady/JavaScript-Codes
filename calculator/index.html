@@ -44,55 +44,76 @@
         let result = 0;
         let clickedBtn = '';
         let operator = {
-            plus: false,
+            plus: true,
             minus: false,
             mul: false,
-            div: false
+            div: false,
+            equal: false
         };
+
         function allFalse() {
             operator.plus = false;
             operator.minus = false;
             operator.mul = false;
             operator.div = false;
+            operator.equal=false;
+        }
+
+        let checkAllFalse = (operator.plus == false && operator.minus == false && operator.mul == false && operator.div == false);
+
+        function checkFourOp() {
+            if (operator.plus)
+                result += Number(clickedBtn);
+            else if (operator.minus)
+                result -= Number(clickedBtn);
+            else if (operator.mul)
+                result *= Number(clickedBtn);
+            else if (operator.div)
+                result /= Number(clickedBtn);
+            else if(checkAllFalse)
+                result+=Number(clickedBtn);
         }
         
-        let checkAllFalse= (operator.plus==false && operator.minus==false && operator.mul==false && operator.div==false);
-        
+
         function addValue() {
             for (let i = 0; i < 10; i++) {
                 let btnId = document.getElementById('btn-' + i);
                 btnId.addEventListener('click', () => {
-                     clickedBtn += i;
-                     document.getElementById('screen-text').innerText = clickedBtn; 
-                    });
+                    clickedBtn += i;
+                    document.getElementById('screen-text').innerText = clickedBtn;
+                });
             }
             let plusBtn = document.getElementById('btn-plus');
             plusBtn.addEventListener('click', () => {
-                result += Number(clickedBtn);
+                checkFourOp();
+                document.getElementById('screen-text').innerHTML = result;
                 clickedBtn = '';
                 allFalse();
                 operator.plus = true;
             });
 
             let minusBtn = document.getElementById('btn-minus');
-            minusBtn.addEventListener('click', () => { 
-                result += Number(clickedBtn);
+            minusBtn.addEventListener('click', () => {
+                checkFourOp();
+                document.getElementById('screen-text').innerHTML = result;
                 clickedBtn = '';
                 allFalse();
-                operator.minus = true; 
+                operator.minus = true;
             });
 
             let multiplicationBtn = document.getElementById('btn-multiplication');
-            multiplicationBtn.addEventListener('click', () => { 
-                result += Number(clickedBtn);
+            multiplicationBtn.addEventListener('click', () => {
+                checkFourOp();
+                document.getElementById('screen-text').innerHTML = result;
                 clickedBtn = '';
                 allFalse();
                 operator.mul = true;
             });
 
             let divisionBtn = document.getElementById('btn-division');
-            divisionBtn.addEventListener('click', () => { 
-                result += Number(clickedBtn);
+            divisionBtn.addEventListener('click', () => {
+                checkFourOp();
+                document.getElementById('screen-text').innerHTML = result;
                 clickedBtn = '';
                 allFalse();
                 operator.div = true;
@@ -101,11 +122,13 @@
             let equalBtn = document.getElementById('btn=');
             equalBtn.addEventListener('click', function () {
 
-                if (operator.plus == true) result += Number(clickedBtn), allFalse();
-                else if (operator.minus == true) result -= Number(clickedBtn), allFalse();
-                else if (operator.mul == true) result *= Number(clickedBtn), allFalse();
-                else if (operator.div == true) result /= Number(clickedBtn), allFalse();
+                if (operator.plus) result += Number(clickedBtn), allFalse();
+                else if (operator.minus) result -= Number(clickedBtn), allFalse();
+                else if (operator.mul) result *= Number(clickedBtn), allFalse();
+                else if (operator.div) result /= Number(clickedBtn), allFalse();
 
+                operator.equal=true;
+                
                 document.getElementById('screen-text').innerHTML = result;
 
                 clickedBtn = '';
@@ -113,7 +136,7 @@
             })
         }
         addValue();
-        
+
         function reset() {
             result = 0;
             clickedBtn = '';
