@@ -73,10 +73,9 @@
 
 
         function addValue() {
-            
             for (let i = 0; i < 10; i++) {
                 let btnId = document.getElementById('btn-' + i);
-                btnId.addEventListener('click', () => {                   
+                btnId.addEventListener('click', () => {                    
                     clickedBtn += i;
                     document.getElementById('screen-text').innerText = clickedBtn;
                 });
@@ -85,7 +84,7 @@
             plusBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
-                if (operator.equal && clickedBtn != '') result=0;     
+                if (operator.equal && clickedBtn !== '') result = 0;
                 clickedBtn = '';
                 allFalse();
                 operator.plus = true;
@@ -105,7 +104,7 @@
             multiplicationBtn.addEventListener('click', () => {
                 checkFourOp();
                 document.getElementById('screen-text').innerHTML = result;
-               if (operator.equal && clickedBtn !== '') result = 0;
+                if (operator.equal && clickedBtn !== '') result = 0;
                 clickedBtn = '';
                 allFalse();
                 operator.mul = true;
