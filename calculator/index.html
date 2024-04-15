@@ -15,7 +15,7 @@
         <section id="calculator-section" class="calculator">
             <div type="text" id="display" class="screen-area"></div>
             <div class="button-area">
-                <button id="btn-7" class="btn"  onclick="addToDisplay('7')" >7</button>
+                <button id="btn-7" class="btn" onclick="addToDisplay('7')">7</button>
                 <button id="btn-8" class="btn" onclick="addToDisplay('8')">8</button>
                 <button id="btn-9" class="btn" onclick="addToDisplay('9')">9</button>
                 <button id="btn-division" class="btn" onclick="addToDisplay('/')">/</button>
@@ -31,8 +31,8 @@
                 <button id="btn-." class="btn" onclick="addToDisplay('.')"> . </button>
                 <button id="btn-0" class="btn" onclick="addToDisplay('0')"> 0 </button>
                 <button id="btn-plus" class="btn" onclick="addToDisplay('+')"> + </button>
+                <button id="btn-x" class="btn" onclick="removeVal()"> X </button>
                 <button id="btn-equal" class="btn" onclick="calculate()"> = </button>
-                
             </div>
         </section>
     </main>
@@ -42,22 +42,26 @@
 
 
     <script>
-        let screenText='';
+        let screenText = '';
         function addToDisplay(value) {
-            screenText+=value;
-            document.getElementById('display').innerText= screenText;
+            screenText += value;
+            document.getElementById('display').innerText = screenText;
         }
-
+        function removeVal() {
+            if (screenText.length != 0) {
+                screenText = screenText.substring(0, screenText.length - 1);
+                document.getElementById('display').innerText = screenText;
+            }
+        }
         function clearDisplay() {
-            screenText='';
+            screenText = '';
             document.getElementById('display').innerText = screenText;
         }
 
         function calculate() {
-            var expression = document.getElementById('display').innerText;
-            var result = eval(expression);
+            let result = eval(screenText);
             document.getElementById('display').innerText = result;
-            screenText=result;
+            screenText = result;
         }
     </script>
 </body>
