@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple React</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        //ReactDOM.render(<div> Hello Simple React </div>, document.querySelector('#demo'));
+        ReactDOM.render(<div> Hello Simple React </div>, document.getElementById("demo"));
+        //2 parameters. 1) HTML that should be displayed 2) select id
+    </script>
+</body>
+</html>
