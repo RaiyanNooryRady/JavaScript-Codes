@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container=document.querySelector('#container');
+        let increment=0;
+        let arr=[];
+        while(increment<15000){
+            increment++;
+            //container.innerHTML+=increment+' ';
+            arr.push(increment);
+        }
+        container.innerHTML=arr.join(' '); //speed boost
+    </script>
+</body>
+</html>
