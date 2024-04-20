@@ -28,3 +28,10 @@ const myElement=(
     </div>
 );
  ReactDOM.render(myElement, domContainer);
+ const button= document.querySelector('#button');
+ const display=document.querySelector('#display');
+ let displayVal=0;
+ button.addEventListener('click',()=>{
+    displayVal++;
+    display.innerHTML=displayVal;
+ })
