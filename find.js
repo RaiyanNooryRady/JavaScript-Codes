@@ -1,8 +1,12 @@
-let arr=[2,45,53,34,55,43];
-let x= arr.find(function(value){
+let arr=[1,1,2,45,53,34,55,43];
+let x= arr.find(function(value,index,arr){
     return value>30;
 },this);
 console.log(x);
+let ind = arr.findIndex(function(value,index,arr){
+    return !(value%2);
+});
+console.log(ind);
 class student{
     constructor(name,age){
         this.name=name;
