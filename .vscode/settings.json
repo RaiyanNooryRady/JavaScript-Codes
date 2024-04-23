@@ -1,36 +1,36 @@
-{
-    // config related to code formatting
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.formatOnSave": false
-    },
-    "[javascriptreact]": {
-        "editor.formatOnSave": false
-    },
-    "javascript.validate.enable": false, //disable all built-in syntax checking
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.fixAll.tslint": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    "eslint.alwaysShowStatus": true,
-    // "prettier.disableLanguages": [
-    //     "javascript",
-    //     "javascriptreact"
-    // ],
-    // emmet
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    }
-}
+// {
+//     // config related to code formatting
+//     "editor.defaultFormatter": "esbenp.prettier-vscode",
+//     "editor.formatOnSave": true,
+//     "[javascript]": {
+//         "editor.formatOnSave": false
+//     },
+//     "[javascriptreact]": {
+//         "editor.formatOnSave": false
+//     },
+//     "javascript.validate.enable": false, //disable all built-in syntax checking
+//     "editor.codeActionsOnSave": {
+//         "source.fixAll.eslint": "explicit",
+//         "source.fixAll.tslint": "explicit",
+//         "source.organizeImports": "explicit"
+//     },
+//     "eslint.alwaysShowStatus": true,
+//     // "prettier.disableLanguages": [
+//     //     "javascript",
+//     //     "javascriptreact"
+//     // ],
+//     // emmet
+//     "emmet.triggerExpansionOnTab": true,
+//     "emmet.includeLanguages": {
+//         "javascript": "javascriptreact"
+//     },
+//     "[jsonc]": {
+//         "editor.defaultFormatter": "vscode.json-language-features"
+//     },
+//     "[html]": {
+//         "editor.defaultFormatter": "vscode.html-language-features"
+//     },
+//     "[json]": {
+//         "editor.defaultFormatter": "vscode.json-language-features"
+//     }
+// }
