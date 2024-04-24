@@ -35,3 +35,12 @@ log(mySet.add({
 let newArr=[0,0,1,2,3,3,3,3,4,4,4,5,5,5,6,6,7,7,8,9,9,9];
 let newSet= new Set(newArr);//array to set
 log([...newSet]); //set to array. found elements of the array uniquely
+
+let p=new Set([1,2,3]);
+let q=new Set([4,3,2]);
+let union= new Set([...p,...q]);
+log(union);
+let intersection= new Set([...p].filter((x)=> q.has(x)));
+log(intersection);
+let difference= new Set([...p].filter((x)=> !q.has(x)));
+log(difference);
