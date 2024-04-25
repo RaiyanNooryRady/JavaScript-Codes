@@ -9,3 +9,9 @@ function myF(){
     console.log ('hello my function');
 }
 export default myF;
+export function add(){
+    console.log('adding');
+}
+export function remove(){
+    console.log('removing');
+}

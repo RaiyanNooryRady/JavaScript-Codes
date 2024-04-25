@@ -13,3 +13,12 @@
 import external, {pi,a} from './External.js';
 console.log(a, pi);
 external();
+// import {add} from './External.js';
+// import {remove} from './External.js';
+
+(async function(){
+const {add}=await import('./External.js');
+const {remove}=await import('./External.js');
+add();
+remove();
+})();
