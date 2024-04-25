@@ -16,3 +16,27 @@ const compare=function(a,b){
 const sortedArr=arr.toSorted(compare);// not numeric sort
 //const sortedArr=arr.sort();//arr.sort() dile main array sorted hoye jay
 console.log(sortedArr,arr);
+const cars=[
+    {
+        type:'VoLvo',
+        year:2016
+    },
+    {
+        type:'YamaHa',
+        year:2000
+    },
+    {
+        type:'BOX',
+        year:1900
+    }
+]
+
+// console.log(cars.sort((x,y)=>x.year-y.year));
+const result=cars.toSorted((x,y)=>{
+    const a=x.type.toLocaleLowerCase();
+    const b=y.type.toLocaleLowerCase();
+    if(a<b) return -1;
+    else if(a>b) return 1;
+    else return 0;
+});
+console.log(result,cars);
