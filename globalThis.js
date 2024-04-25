@@ -32,4 +32,7 @@ const person={
     }
     
 }
-log(person.profession?.student?.Institute?.location?.district); //though some code missing in object. error will not be displayed
+log(person.profession?.student?.Institute?.location?.district); //though some code missing in object. error will not be displayed //optional chaining feature
+let arr=["red","blue","black","white"];
+arr[1]="";
+log(arr?.[1]);
