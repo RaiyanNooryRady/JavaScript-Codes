@@ -1,77 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-//const element= React.createElement('h1',null,'Hello, World');
+//functional component: it's not stateful
+// function Clock({locale,className}) {
 
+//     return (
+//         <h1 className="heading">
+//             <span className="text">Hello {new Date().toLocaleTimeString(locale)}</span> <br/>
+//             <span className={className}>second is {new Date().getSeconds(locale)}</span>
+//         </h1>
+//     );// react element
 
-// setInterval(()=>{
-//   const index = 0;
-//   const element = (
-//     <h1 id="hello" className='headings' tabIndex={index}>
-//       <div>Hello {new Date().toLocaleTimeString()}</div>
-//       <img src='https://img.freepik.com/free-photo/vibrant-colors-nature-close-up-wet-purple-daisy-generated-by-artificial-intellingence_25030-63819.jpg' alt='web-img'/>
-//     </h1>);
-//   ReactDOM.render(element, document.getElementById('root'));
-// },1000);
-/*
-element ={
-  type:h1,
-  props:{
-    className:'heading',
-    children: [
-    {
-      type:span,
-      props: 'Hello 11 world'
-    },
-    {
-      type:'img',
-      src:''
+// }//react component
+//function= react component, it returns react element
+
+//class component: its stateful
+class Clock extends React.Component{
+
+    render(){
+
+        return (
+            <h1 className="heading">
+                <span className="text">Hello {this.props.children}{ new Date().toLocaleTimeString(this.props.locale)}</span> <br/>
+                <span className={this.props.className}>second is {new Date().getSeconds()}</span>
+            </h1>
+        );
     }
-  ]
-  }
 }
+// const ClockComponent= new Clock();
 
-
-*/
-
-function getGreetings(user) {
-  if (user) {
-    return <h1>Hello {user}</h1>;
-  }
-  else
-    return <h1>Hello stranger</h1>;
-}
-// const element2 = <h1>Hello {getGreetings('Raiyan')} </h1>
-// console.log(element, element2);
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-// // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
-// // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
-
-function name(userName) {
-  return userName.firstName + ' ' + userName.lastName;
-}
-const user = {
-  firstName: 'Farhan',
-  lastName: 'Ahmed'
-}
-const element =
-  <div>
-    <h1>Hello {name(user)}</h1>
-    <h2>{getGreetings(name(user))}</h2>
-  </div>;
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(element);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Clock locale="bn-BD" className="hello"> World </Clock>);
