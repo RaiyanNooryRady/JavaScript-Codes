@@ -1,10 +1,13 @@
 import React from "react";
+import Button from "./Button";
 //class component: its stateful
 class Clock extends React.Component {
 
     // constructor(props){
     //     super(props);
-    //     this.state={date:new Date()};
+    //     this.state={date:new Date(),locale:"bn-BD"};
+    //     this.handleClick=this.handleClick.bind(this);
+
     // }
     state = { date: new Date(),locale:"bn-BD" };
     componentDidMount() {
@@ -16,13 +19,14 @@ class Clock extends React.Component {
     tick() {
         this.setState({ date: new Date() });
     }
-    handleClick(e){
+    handleClick= (locale)=>{
         // e.preventDefault();
        // alert('hello');
-       this.setState({locale:"en-US"})
+    //    console.log(this);
+       this.setState({locale});
     }
     render() {
-
+        console.log('clock component udpated');
         const { date,locale } = this.state;
 
         return (
@@ -35,7 +39,8 @@ class Clock extends React.Component {
                     <span className={this.props.className}>second is {date.getSeconds()}</span>
 
                 </h1>
-                <button type="button" onClick={this.handleClick}>Click Here</button>
+                {/* <button type="button" onClick={this.handleClick.bind(this,"en-US")}>Click Here</button> */}
+                <Button change={this.handleClick} locale="en-US"> Click Here </Button>
             </div>
         );
     }
