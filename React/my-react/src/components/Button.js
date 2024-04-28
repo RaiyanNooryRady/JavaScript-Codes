@@ -8,7 +8,7 @@ class Button extends React.Component {
         else return true;
     }
     render() {
-        console.log('button component updated');
+       // console.log('button component updated');
         const { change,locale } = this.props;
         return (
 
