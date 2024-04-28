@@ -10,10 +10,20 @@
         const javascript={
             name:'javascript',
             libraries:['react','vue','angular'],
-            printLibraries: function (){
-                this.libraries.forEach(element=> {
-                    console.log(`${this.name} loves ${element}`);
-                });   
+            printLibraries: function(){
+                // this.libraries.forEach(element=> {
+                //     console.log(`${this.name} loves ${element}`);
+                // });   
+                // this.libraries.forEach(function(element) {
+                //     console.log(`${this.name} loves ${element}`);
+                // },this);
+                // this.libraries.forEach(function(element) {
+                //     console.log(`${this.name} loves ${element}`);
+                // }.bind(this));
+                let self=this;
+                this.libraries.forEach(function(element) {
+                    console.log(`${self.name} loves ${element}`);
+                });
             }
         }
        javascript.printLibraries();
