@@ -6,7 +6,8 @@
     <title>Ajax</title>
   </head>
   <body>
-    <button onclick="get_request()">Exc Request</button>
+    <button onclick="get_request()">Exec get request</button>
+    <button onclick="post_request()">Exec post request</button>
     <script>
       function get_request() {
         let URL = "https://crud.teamrabbil.com/api/v1/ReadProduct";
@@ -15,6 +16,28 @@
         .then(response=>response.json())
         .then(result=>console.log(result))
         .catch(error=>console.log(error));
+      }
+      function post_request(){
+        let URL= "https://crud.teamrabbil.com/api/v1/CreateProduct";
+        let bodyData={
+            Img:"Daiyan's Mango",
+            ProductCode:"17509",
+            ProductName:"Django",
+            Qty:"30",
+            TotalPrice:"4430",
+            UnitPrice:"434"
+
+        };
+        let config= {
+            method: "POST",
+            headers:{'Accept':'application/json','Content-Type':'application/json'},
+            body: JSON.stringify(bodyData)
+        }
+        fetch(URL,config)
+        .then(response=>response.json())
+        .then(result=>console.log(result))
+        .catch(err=>console.log(err));
+
       }
       
     </script>
