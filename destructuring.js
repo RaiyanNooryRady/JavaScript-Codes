@@ -31,3 +31,6 @@ let p=4,q=3;
 //swap p,q
 [q,p]=[p,q];
 console.log(p,q);
+var arr=[2,5,2,4,1];
+var [,m,n,,o]=arr;
+console.log(m,n,o);
