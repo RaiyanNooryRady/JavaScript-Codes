@@ -13,14 +13,14 @@
 
 <script>
 function bulbChange(){
-   let switchVal=document.getElementById('switch').innerHTML;
+   let switchVal=document.getElementById('switch').innerText;
    if(switchVal=="Switch On"){
     document.getElementById("bulb").src="bulbon.gif";
-    document.getElementById('switch').innerHTML="Switch Off";
+    document.getElementById('switch').innerText="Switch Off";
    }
    else{
    document.getElementById("bulb").src="bulboff.gif";
-    document.getElementById('switch').innerHTML="Switch On";
+    document.getElementById('switch').innerText="Switch On";
    }
 }
 
